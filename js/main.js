@@ -34,9 +34,18 @@ createApp({
       sliderIndex: 0,
     };
   },
+  computed: {
+    imageUrl() {
+      return `./img/0${this.sliderIndex + 1}.webp`;
+    }
+  },
   methods: {
-    showNext: function(){
-      this.sliderIndex ++;
+    showNext: function () {
+      this.sliderIndex++;
+      console.log(this.sliderIndex);
+    },
+    showPrevious: function () {
+      this.sliderIndex--;
       console.log(this.sliderIndex);
     }
   }

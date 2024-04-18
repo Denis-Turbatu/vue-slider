@@ -46,12 +46,10 @@
                   <!-- immagini -->
                   <!-- immagine 1 -->
 
-
-
                   <div class="my-carousel-item active" :carousel-item="sliderIndex">
                     <img
-                      class="img-fluid"
-                      src="./img/01.webp"
+                      class="img-fluid" id="imageCarousel"
+                      :src="imageUrl"
                       alt="Marvel's Spiderman Miles Morale picture"
                     />
                     <div class="item-description px-3">
@@ -66,16 +64,11 @@
 
 
 
-
-
-
-
-
                 </div>
                 <div class="my-thumbnails position-relative">
                   <!-- prev -->
                   <div class="my-previous position-absolute">
-                    <span class="my-prev-hook"></span>
+                    <span class="my-prev-hook" @click="showPrevious"></span>
                   </div>
                   <!-- next -->
                   <div class="my-next position-absolute">
