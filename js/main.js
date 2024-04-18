@@ -31,7 +31,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      sliderIndex: 0,
+      sliderIndex: 0
     };
   },
   computed: {
@@ -40,12 +40,20 @@ createApp({
     }
   },
   methods: {
+    // aumenta l'indice del carosello di 1
     showNext: function () {
       this.sliderIndex++;
+      if(this.sliderIndex > 4){
+        this.sliderIndex = 0;
+      }
       console.log(this.sliderIndex);
     },
+    // diminuisce l'indice del carosello di 1
     showPrevious: function () {
       this.sliderIndex--;
+      if (this.sliderIndex < 0) {
+        this.sliderIndex = 4;
+      }
       console.log(this.sliderIndex);
     }
   }
