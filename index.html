@@ -67,27 +67,22 @@
                 </div>
                 <div class="my-thumbnails position-relative">
                   <!-- prev -->
-                  <div class="my-previous position-absolute">
-                    <span class="my-prev-hook" @click="showPrevious"></span>
+                  <div class="my-previous position-absolute" @click="showPrevious">
                     <!-- click per aggiungere un eventListener che esegue la funzione showPrevious -->
+                    <span class="my-prev-hook"></span>
                   </div>
                   <!-- next -->
-                  <div class="my-next position-absolute">
-                    <span class="my-next-hook" @click="showNext"></span>
+                  <div class="my-next position-absolute" @click="showNext">
                     <!-- click per aggiungere un eventListener che esegue la funzione showNext -->
+                    <span class="my-next-hook"></span>
                   </div>
                   <!-- immagini interne -->
                   <img
                     class="img-fluid my-thumbnail active"
-                    src="./img/01.webp"
+                    v-for="curImg, index in images"
+                    :src="images[index].image"
                     alt="Thumbnail of Marvel's Spiderman Miles Morale picture"
                   />
-                  <img
-                    class="img-fluid my-thumbnail"
-                    src="./img/02.webp"
-                    alt="Thumbnail of Ratchet & Clank: Rift Apart picture"
-                  />
-                  <!-- etc ... -->
                 </div>
               </div>
             </div>
